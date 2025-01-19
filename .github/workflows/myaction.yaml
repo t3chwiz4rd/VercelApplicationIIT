@@ -1,10 +1,10 @@
 name: Hello World
 
-on: push
+on: push  # Trigger the workflow on a push event
 
 jobs:
   test:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specify the runner environment
     steps:
-      - name: 21f1006867@ds.study.iitm.ac.in
+      - name: Say Hello
         run: echo "Hello, world!"
