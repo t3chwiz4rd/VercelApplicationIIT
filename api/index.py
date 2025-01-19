@@ -4,7 +4,7 @@ from urllib.parse import urlparse, parse_qs
 from pathlib import Path
 
 # Path to the file containing student marks
-MARKS_FILE_PATH = Path("../data/q-vercel-python.json")
+MARKS_FILE_PATH = Path("data/q-vercel-python.json")
 
 # Load the marks data from the file
 def load_marks():
