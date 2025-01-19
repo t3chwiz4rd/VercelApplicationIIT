@@ -42,11 +42,11 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(response).encode("utf-8"))
         return
 
-# # Start the HTTP server
-# def run(server_class=HTTPServer, handler_class=handler, port=8000):
-#     server_address = ("", port)
-#     httpd = server_class(server_address, handler_class)
-#     httpd.serve_forever()
+# Start the HTTP server
+def run(server_class=HTTPServer, handler_class=handler, port=8000):
+    server_address = ("", port)
+    httpd = server_class(server_address, handler_class)
+    httpd.serve_forever()
 
-# if __name__ == "__main__":
-#     run()
+if __name__ == "__main__":
+    run()
