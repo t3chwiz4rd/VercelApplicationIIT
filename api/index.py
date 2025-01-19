@@ -17,6 +17,11 @@ marks_data = load_marks()  # This is now a list of dictionaries
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')  # Allow cross-origin requests
+        self.end_headers()
+        
         # Parse query parameters
         parsed_url = urlparse(self.path)
         query_params = parse_qs(parsed_url.query)
@@ -34,11 +39,6 @@ class handler(BaseHTTPRequestHandler):
 
         # Prepare the response
         response = {"marks": marks}
-
-        # Send the response
-        self.send_response(200)
-        self.send_header("Content-type", "application/json")
-        self.end_headers()
         self.wfile.write(json.dumps(response).encode("utf-8"))
         return
 
